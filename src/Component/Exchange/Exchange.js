@@ -6,7 +6,7 @@ import './Exch.css'
 import CurrencyFormat from 'react-currency-format';
 const PESOtoVND = function (props) {
   const convert = function (peso) {
-    return peso * 475;
+    return peso * 482;
   };
   return (
     <div>
