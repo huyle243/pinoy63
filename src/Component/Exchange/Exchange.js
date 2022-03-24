@@ -28,7 +28,7 @@ const PESOtoVND = function (props) {
 };
 const VNDtoPESO = function (props) {
   const convert = function (vnd) {
-    return vnd / 475;
+    return vnd / 482;
   };
   return (
     <div>
