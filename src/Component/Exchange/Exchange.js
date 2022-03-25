@@ -6,7 +6,13 @@ import './Exch.css'
 import CurrencyFormat from 'react-currency-format';
 const PESOtoVND = function (props) {
   const convert = function (peso) {
-    return peso * 482;
+    
+    if(peso <1000){
+     return  peso * 482 + 25000
+    }
+    else{
+     return  peso * 482;
+    } 
   };
   return (
     <div>
@@ -28,19 +34,26 @@ const PESOtoVND = function (props) {
 };
 const VNDtoPESO = function (props) {
   const convert = function (vnd) {
-    return vnd / 482;
+
+      if( vnd < 500000){
+        return vnd / 482 - 50
+      }
+      else {
+        return vnd / 482
+      }
   };
   return (
     <div>
       <span>VND </span>
       <input
-          placeholder="Or fill in amount VND..."
+          
         onChange={(e) => {
           const vnd = e.target.value;
           const peso = convert(vnd);
           props.onHandleChange({
-            peso,
             vnd,
+            peso,
+            
           });
         }}
         value={props.value}
